@@ -1,11 +1,11 @@
 export async function up(knex) {
-  await knex.schema.createTable('users', (table) => {
+  await knex.schema.createTable('customers', (table) => {
     table.increments('id').primary()
     table.string('name')
-    table.string('email')
+    table.integer('order_id')
   })
 }
 
 export async function down(knex) {
-  await knex.schema.dropTable('users')
+  await knex.schema.dropTable('customers')
 }
