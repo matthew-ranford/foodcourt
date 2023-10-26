@@ -39,3 +39,16 @@ router.get('/:name', async (req, res, next) => {
 })
 
 export default router
+
+//function to edit orders
+
+// router.post('/orders/edit', async (req, res) => {
+//   // ASSISTANCE: So you know what's being posted ;)
+//   const { id, name, description } = req.body
+//   const updatedLocation = { id, name, description }
+//   await db.updateLocation(updatedLocation)
+//   // TODO: Update the location in the database based on its id
+//   // console.log(req.body)
+//   // console.log(test)
+//   res.redirect('/locations')
+// })

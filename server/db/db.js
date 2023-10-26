@@ -26,8 +26,23 @@ export async function getAllCustomers() {
     )
 }
 
+export async function editOrder(editedOrder) {
+  console.log(editedOrder)
+  return connection('orders')
+    .where('orders.id', editedOrder.id)
+    .update(editedOrder)
+}
+
+// export async function addOrder(addNewOrder) {
+//   return connection('orders')
+//     .where('orders.id', addNewOrder.id)
+//     .update(addNewOrder)
+// }
+
 export async function getAllOrders() {
   return await connection('customers')
     .join('orders', 'orders.id', 'customers.order_id')
     .select('orders.id', 'customers.name')
 }
+
+
