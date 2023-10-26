@@ -15,16 +15,10 @@ const router = express.Router()
 //catch errors
 
 router.get('/', async (req, res, next) => {
-  try {
-    const customersArr = await db.getAllCustomers() //check this function name
-    const viewData = {
-      groupName: 'Customers',
-      items: customersArr,
-    }
-    res.render('index', viewData)
-  } catch (e) {
-    next(e)
-  }
+  const customersArr = await db.getAllCustomers() //check this function name
+  const customers = { customersArr }
+  console.log(customers)
+  res.render('index', customers)
 })
 
 //function to list all orders
@@ -32,9 +26,16 @@ router.get('/', async (req, res, next) => {
 router.get('/orders', async (req, res, next) => {
   const ordersArr = await db.getAllOrders() //check this function name
   const orders = { ordersArr }
-  console.log(orders)
   res.render('orders', orders)
+})
 
+//route for individual customer
+router.get('/:name', async (req, res, next) => {
+  const name = req.params.name
+  const customersArr = await db.getIndividualCustomer() //check this function name
+  const customers = { customersArr }
+  console.log(customers)
+  res.render('individual_customer', customers)
 })
 
 export default router
