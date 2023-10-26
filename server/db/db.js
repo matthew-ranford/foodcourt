@@ -38,3 +38,11 @@ export async function editOrder(editedOrder) {
 //     .where('orders.id', addNewOrder.id)
 //     .update(addNewOrder)
 // }
+
+export async function getAllOrders() {
+  return await connection('customers')
+    .join('orders', 'orders.id', 'customers.order_id')
+    .select('orders.id', 'customers.name')
+}
+
+

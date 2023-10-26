@@ -1,13 +1,5 @@
 <main>
-<h1>{{orders}}</h1>
-  <table>
-    <tbody>
-      {{#each items}}
-        <tr>
-          <td><a href="/renters/{{renterId}}">{{renterName}}</a></td>
-          <td><a href="/movies/{{movieId}}">{{movieTitle}}</a></td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
+{{#each ordersArr}}
+ <h2>{{name}} {{id}}</h2>
+  {{/each}}
 </main>

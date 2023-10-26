@@ -1,13 +1,9 @@
 <main>
-<ul>
-  {{#each customersArr}}
-  <li><h2>{{name}} </h2>
-    <h3>Pizza: {{pizza}}</h3>
+{{#each customersArr.name}}
+ <h3>Pizza: {{pizza}}</h3>
     <h3>Burgers: {{burgers}}</h3>
     <h3>Curry: {{curry}}</h3>
     <h3>Lobster caviar: {{lobster_caviar}}</h3>
     <h3>Croquembouche: {{croquembouche}}</h3>
-    </li>
   {{/each}}
-</ul>
 </main>
