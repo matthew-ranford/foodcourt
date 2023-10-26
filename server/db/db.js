@@ -25,3 +25,9 @@ export async function getAllCustomers() {
       'orders.croquembouche'
     )
 }
+
+export async function getAllOrders() {
+  return await connection('customers')
+    .join('orders', 'orders.id', 'customers.order_id')
+    .select('orders.id', 'customers.name')
+}
