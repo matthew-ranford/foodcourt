@@ -25,3 +25,16 @@ export async function getAllCustomers() {
       'orders.croquembouche'
     )
 }
+
+export async function editOrder(editedOrder) {
+  console.log(editedOrder)
+  return connection('orders')
+    .where('orders.id', editedOrder.id)
+    .update(editedOrder)
+}
+
+// export async function addOrder(addNewOrder) {
+//   return connection('orders')
+//     .where('orders.id', addNewOrder.id)
+//     .update(addNewOrder)
+// }
