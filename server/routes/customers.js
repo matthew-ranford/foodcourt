@@ -30,16 +30,11 @@ router.get('/', async (req, res, next) => {
 //function to list all orders
 
 router.get('/orders', async (req, res, next) => {
-  try {
-    const ordersArr = await db.getAllOrders() //check this function name
-    const viewData = {
-      groupName: 'Orders',
-      items: ordersArr,
-    }
-    res.render('orders', viewData)
-  } catch (e) {
-    next(e)
-  }
+  const ordersArr = await db.getAllOrders() //check this function name
+  const orders = { ordersArr }
+  console.log(orders)
+  res.render('orders', orders)
+
 })
 
 export default router
