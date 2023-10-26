@@ -5,7 +5,7 @@ export async function up(knex) {
     table.integer('pizza')
     table.integer('burgers')
     table.integer('curry')
-    table.integer('lobster caviar')
+    table.integer('lobster_caviar')
     table.integer('croquembouche')
   })
 }
