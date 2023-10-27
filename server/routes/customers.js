@@ -30,12 +30,12 @@ router.get('/orders', async (req, res, next) => {
 })
 
 //route for individual customer
-router.get('/:name', async (req, res, next) => {
-  const name = req.params.name
-  const customersArr = await db.getIndividualCustomer() //check this function name
-  const customers = { customersArr }
-  console.log(customers)
-  res.render('individual_customer', customers)
+router.get('/customers/:id', async (req, res, next) => {
+  const id = Number(req.params.id)
+  const customer = await db.getIndividualCustomer(id) //check this function name
+  // const customers = { customersArr }
+  console.log(customer)
+  res.render('individual_customer', customer)
 })
 
 export default router

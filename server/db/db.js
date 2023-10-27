@@ -31,3 +31,18 @@ export async function getAllOrders() {
     .join('orders', 'orders.id', 'customers.order_id')
     .select('orders.id', 'customers.name')
 }
+
+export async function getIndividualCustomer(id) {
+  return await connection('customers')
+    .join('orders', 'customers.id', 'orders.customer_id')
+    .where('customers.id', id)
+    .first()
+    .select(
+      'customers.name',
+      'orders.pizza',
+      'orders.burgers',
+      'orders.curry',
+      'orders.lobster_caviar',
+      'orders.croquembouche'
+    )
+}
