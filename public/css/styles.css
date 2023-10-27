@@ -1,12 +1,55 @@
 h1 {
-  color: red;
+  color: rgb(253, 238, 21);
 }
 
 body{
   background-color: peru;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 }
 
 img {
   width: 500px;
-  height: auto
+  height: auto;
+  border-radius: 50%;
 }
+
+header, footer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+button {
+  width: 100vw;
+  height: 130px;
+  background-color: burlywood;
+  border: none;
+  font-size: 80px;
+  
+  
+}
+
+button:hover{
+  background-color: blanchedalmond;
+  color:rgb(156, 150, 142)rgb(156, 142, 155)rgb(218, 129, 210)
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(253, 238, 21);}
