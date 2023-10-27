@@ -29,8 +29,17 @@ router.get('/orders', async (req, res, next) => {
   res.render('orders', orders)
 })
 
-//route for individual customer
 router.get('/customers/:id', async (req, res, next) => {
+  const id = Number(req.params.id)
+  const customer = await db.getIndividualCustomer(id) //check this function name
+  // const customers = { customersArr }
+  console.log(customer)
+  res.render('individual_customer', customer)
+})
+
+
+//route for individual customer
+router.get('/customers/add/:id', async (req, res, next) => {
   const id = Number(req.params.id)
   const customer = await db.getIndividualCustomer(id) //check this function name
   // const customers = { customersArr }
