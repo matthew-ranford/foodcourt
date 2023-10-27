@@ -22,7 +22,8 @@ export async function getAllCustomers() {
       'orders.burgers',
       'orders.curry',
       'orders.lobster_caviar',
-      'orders.croquembouche'
+      'orders.croquembouche',
+      'customers.id'
     )
 }
 
@@ -45,7 +46,6 @@ export async function getAllOrders() {
     .select('orders.id', 'customers.name')
 }
 
-
 export async function getIndividualCustomer(id) {
   return await connection('customers')
     .join('orders', 'customers.id', 'orders.customer_id')
@@ -57,7 +57,7 @@ export async function getIndividualCustomer(id) {
       'orders.burgers',
       'orders.curry',
       'orders.lobster_caviar',
-      'orders.croquembouche'
+      'orders.croquembouche',
+      'customers.id'
     )
 }
-

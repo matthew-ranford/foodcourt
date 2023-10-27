@@ -1,11 +1,12 @@
 <main>
 {{!-- {{#each customersArr.name}} --}}
+<a href="/"><button>Home</button></a>
 <h1>{{name}}</h1>
  <h3>Pizza: {{pizza}}</h3>
-    <h3>Burgers: {{burgers}}</h3>
-    <h3>Curry: {{curry}}</h3>
-    <h3>Lobster caviar: {{lobster_caviar}}</h3>
-    <h3>Croquembouche: {{croquembouche}}</h3>
-    <a href="/orders/add">Add to this order</a>
+    <h3>Burgers: {{burgers}}</h3> <img src ="/images/burgers.jpg">
+    <h3>Curry: {{curry}}</h3> <img src ="/images/pizza.jpg">
+    <h3>Lobster caviar: {{lobster_caviar}}</h3> <img src ="/images/lobster_caviar.jpg">
+    <h3>Croquembouche: {{croquembouche}}</h3> <img src ="/images/Croquembouche.jpg">
+    <a href="/orders/add/{{id}}">Add to this order</a>
   {{!-- {{/each}} --}}
 </main>
