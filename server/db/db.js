@@ -26,12 +26,12 @@ export async function getAllCustomers() {
     )
 }
 
-export async function editOrder(editedOrder) {
-  console.log(editedOrder)
-  return connection('orders')
-    .where('orders.id', editedOrder.id)
-    .update(editedOrder)
-}
+// export async function editOrder(editedOrder) {
+//   console.log(editedOrder)
+//   return connection('orders')
+//     .where('orders.id', editedOrder.id)
+//     .update(editedOrder)
+// }
 
 // export async function addOrder(addNewOrder) {
 //   return connection('orders')
@@ -45,4 +45,19 @@ export async function getAllOrders() {
     .select('orders.id', 'customers.name')
 }
 
+
+export async function getIndividualCustomer(id) {
+  return await connection('customers')
+    .join('orders', 'customers.id', 'orders.customer_id')
+    .where('customers.id', id)
+    .first()
+    .select(
+      'customers.name',
+      'orders.pizza',
+      'orders.burgers',
+      'orders.curry',
+      'orders.lobster_caviar',
+      'orders.croquembouche'
+    )
+}
 
